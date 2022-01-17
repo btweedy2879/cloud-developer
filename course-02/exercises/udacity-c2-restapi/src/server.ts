@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import express from 'express';
 import { sequelize } from './sequelize';
 
@@ -15,6 +17,8 @@ import { V0MODELS } from './controllers/v0/model.index';
   const port = process.env.PORT || 8080; // default port to listen
   
   app.use(bodyParser.json());
+
+  console.log("PORT:",process.env.PORT);
 
   //CORS Should be restricted
   app.use(function(req, res, next) {
